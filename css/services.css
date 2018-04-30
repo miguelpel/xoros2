@@ -1,0 +1,254 @@
+/* Here the font-family imports */
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans/OpenSans-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans Regular';
+    src: url('../fonts/opensans/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans Bold';
+    src: url('../fonts/opensans/OpenSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body,
+body * {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #FDFDFD;
+    overflow: hidden;
+}
+
+
+/* orange is a class used as <span> when we need to
+turn a letter red*/
+
+.orange {
+    color: #FF7F20;
+}
+
+
+/* removes the underline and the color of links. */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* ul is in in the footer menu*/
+
+ul {
+    list-style-type: none;
+}
+
+#logo {
+    /* the logo already have padding 0 and margin 0.
+    The padding is internal to the svg file*/
+    width: 30%;
+}
+
+header {
+    height: 15vh;
+    /* to avoid the social links */
+    padding-right: 50px;
+}
+
+header h1 {
+    font-family: 'Open Sans Regular', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    float: right;
+    position: relative;
+    top: 15px;
+    right: 20px;
+}
+
+
+/* Social Links */
+
+.social-medias {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 2;
+}
+
+.social-medias img {
+    display: block;
+    margin: 5px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.6;
+}
+
+.social-medias img:hover {
+    opacity: 1;
+}
+
+
+/* SECTIONS */
+
+.section-container {
+    height: 78vh;
+}
+
+section {
+    padding: 5px 20px 5px 20px;
+    display: grid;
+    /* grid-template-columns: 1fr 1fr;*/
+    grid-template-columns: 360px auto 20px;
+}
+
+section h3 {
+    margin: 15px 0;
+    font-family: 'Open Sans Regular', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-kerning: normal;
+    opacity: 0.7;
+}
+
+section h3:hover {
+    color: #FF7F20;
+}
+
+section p {
+    padding: 0;
+}
+
+.hidden {
+    /* display: block; */
+    display: none;
+}
+
+.appear {
+    display: block;
+}
+
+footer {
+    font-family: 'Open Sans Bold', Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    height: 7vh;
+    padding: 10px 10px;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer a:hover {
+    color: #FF7F20;
+}
+
+@media only screen and (max-width: 760px) {
+    section {
+        padding: 5px 10px 5px 10px;
+        grid-template-columns: 340px auto 20px;
+    }
+    section p {
+        padding: 0;
+        position: relative;
+        top: -15px;
+    }
+}
+
+@media only screen and (max-width: 716px) {
+    #logo {
+        width: 40%;
+    }
+    .section-container {
+        /*display: inline;*/
+        height: 74vh;
+    }
+    section {
+        padding: 0px 15px;
+        display: block;
+        /* grid-template-columns: 1fr 1fr;*/
+        /*grid-template-columns: 360px auto 20px;*/
+    }
+    section h3 {
+        margin: 0 0 25px 0;
+        font-family: 'Open Sans Regular', Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        font-kerning: normal;
+        opacity: 0.7;
+    }
+    section h3:hover {
+        color: #FF7F20;
+    }
+    section p {
+        padding: 10px 0 10px 100px;
+    }
+    /*section h3 {
+        margin: 5px 0;
+    }*/
+}
+
+@media only screen and (max-width: 570px) {
+    #logo {
+        width: 200px;
+    }
+    header h1 {
+        font-size: .8rem;
+        float: none;
+        position: relative;
+        top: -10px;
+        left: 13px;
+    }
+    body {
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+    .section-container {
+        /*display: inline;*/
+        height: 80vh;
+    }
+    footer ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    #logo {
+        width: 150px;
+    }
+    header h1 {
+        font-size: .7rem;
+        top: 0px;
+    }
+    .orange {
+        color: black;
+    }
+    .section-container {
+        padding-right: 20px;
+        height: auto;
+    }
+    section h2 {
+        font-size: 1.7rem;
+    }
+    section p {
+        padding: 10px 10px 10px 50px;
+    }
+    footer {
+        font-size: 1.2rem;
+    }
+}

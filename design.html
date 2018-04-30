@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>XOROS - Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/design.css" />
+    <!--<script src="js/main.js"></script>-->
+    <script defer src="fonts/fontawesome-all.js"></script>
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="imgs/logoXOROS.svg" alt="Xoros - logo">
+        <h1 id="name-activity">Μαρια Ρηγα<br>Αρχιτεκτων Μηχανικος<br>2541 400 925</h1>
+        <div class="social-medias">
+            <a href="https://www.facebook.com/maria.riga.146">
+                <img src="imgs/facebook.png">
+            </a>
+            <img src="imgs/pinterest.png">
+            <img src="imgs/instagram.png">
+        </div>
+    </header>
+    <!--section container?-->
+    <div class="section-container">
+        <section class="section-left">
+            <div class="image">
+                <i class="icone fa fa-angle-left" onclick="changeslide(0, 0)"></i>
+                <img src="imgs/eisthnxanthi1S.jpg" alt="">
+                <i class="icone fa fa-angle-right" onclick="changeslide(0, 1)"></i>
+            </div>
+            <h2 class="project-title">Καφετερια</h2>
+        </section>
+        <section class="section-right">
+            <div class="image">
+                <i class="icone fa fa-angle-left" onclick="changeslide(1, 0)"></i>
+                <img src="imgs/canape2S.jpg" alt="">
+                <i class="icone fa fa-angle-right" onclick="changeslide(1, 1)"></i>
+            </div>
+            <h2 class="project-title">Γραφειο</h2>
+        </section>
+        <section class="section-left">
+            <div class="image">
+                <i class="icone fa fa-angle-left" onclick="changeslide(2, 0)"></i>
+                <img src="imgs/farmacy2S.jpg" alt="">
+                <i class="icone fa fa-angle-right" onclick="changeslide(2, 1)"></i>
+            </div>
+            <h2 class="project-title">Φαρμακειο</h2>
+        </section>
+        <section class="section-right">
+            <div class="image">
+                <i class="icone fa fa-angle-left" onclick="changeslide(3, 0)"></i>
+                <img src="imgs/karate1S.jpg" alt="">
+                <i class="icone fa fa-angle-right" onclick="changeslide(3, 1)"></i>
+            </div>
+            <h2 class="project-title">Χωρος Αθλησης</h2>
+        </section>
+    </div>
+    <footer>
+        <nav id="navBar">
+            <ul>
+                <li><a href="index.html">H<span class="orange">O</span>ME</a></li>
+                <li><a href="services.html">ΥΠΗΡΕΣ<span class="orange">Ι</span>ΕΣ</a></li>
+                <li><a href="#">DES<span class="orange">I</span>GN</a></li>
+                <li><a href="news.html">Ν<span class="orange">Ε</span>Α</a></li>
+                <li><a href="contact.html">ΕΠΙΚΟΙΝΩΝ<span class="orange">Ι</span>Α</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+<script>
+    // faire un objet JSON pour associer les images à chaque section
+    var data = {
+        "slider_0": {
+            "id": "0",
+            "urls": [
+                "imgs/eisthnxanthi1S.jpg",
+                "imgs/eisthnxanthi2S.jpg",
+                "imgs/eisthnxanthi3S.jpg"
+            ],
+            "current": "0"
+        },
+        "slider_1": {
+            "id": "1",
+            "urls": [
+                "imgs/canape2S.jpg",
+                "imgs/canape1S.jpg"
+            ],
+            "current": "0"
+        },
+        "slider_2": {
+            "id": "2",
+            "urls": [
+                "imgs/farmacy2S.jpg",
+                "imgs/farmacy1S.jpg",
+                "imgs/farmacy3S.jpg",
+                "imgs/farmacy4S.jpg",
+                "imgs/farmacy5S.jpg"
+            ],
+            "current": "0"
+        },
+        "slider_3": {
+            "id": "3",
+            "urls": [
+                "imgs/karate1S.jpg"
+            ],
+            "current": "0"
+        }
+    };
+
+    // HERE check if there're pictures in the slider, if not, hide arrows.
+
+    var sliders = document.querySelectorAll('.image');
+    for (var i = 0; i < sliders.length; i++) {
+        var slide = data['slider_' + i];
+        if (slide.urls.length < 2) {
+            var arrows = sliders[i].querySelectorAll('i');
+            for (var j = 0; j < arrows.length; j++) {
+                arrows[j].style.display = 'none';
+            }
+        }
+    }
+
+    function changeslide(sld, dir) {
+        var slide = data['slider_' + sld];
+        var image = document.querySelectorAll('.image')[sld].getElementsByTagName('IMG')[0];
+        var direction = dir;
+        slide.current = Number(slide.current);
+        if (dir === 0) {
+            slide.current -= 1;
+            if (slide.current < 0) slide.current = slide.urls.length - 1;
+        } else {
+            slide.current += 1;
+            if (slide.current >= slide.urls.length) slide.current = 0;
+        };
+        console.log(slide.current);
+        image.src = slide.urls[slide.current];
+    };
+</script>
+
+</html>
