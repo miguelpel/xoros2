@@ -8,22 +8,23 @@
 }
 
 @font-face {
-    font-family: 'Open Sans Regular';
+    font-family: 'Open Sans';
     src: url('../fonts/opensans/OpenSans-Regular.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Open Sans Bold';
+    font-family: 'Open Sans';
     src: url('../fonts/opensans/OpenSans-Bold.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: bolder;
     font-style: normal;
 }
 
 body,
 body * {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-weight: normal;
     margin: 0px;
     padding: 0px;
 }
@@ -31,14 +32,6 @@ body * {
 body {
     background-color: #FDFDFD;
     overflow: hidden;
-}
-
-
-/* orange is a class used as <span> when we need to
-turn a letter red*/
-
-.orange {
-    color: #FF7F20;
 }
 
 
@@ -56,26 +49,44 @@ ul {
     list-style-type: none;
 }
 
-#logo {
-    /* the logo already have padding 0 and margin 0.
-    The padding is internal to the svg file*/
-    width: 30%;
+
+/* orange is a class used as <span> when we need to
+turn a letter red*/
+
+.orange {
+    color: #FF7F20;
 }
 
+
+/* Header */
+
 header {
-    height: 15vh;
+    height: 16vh;
     /* to avoid the social links */
     padding-right: 50px;
 }
 
+.headerTop {
+    width: 100vw;
+}
+
 header h1 {
-    font-family: 'Open Sans Regular', Arial, Helvetica, sans-serif;
+    padding: 6px;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-weight: bolder;
     text-transform: uppercase;
     font-size: 1rem;
     float: right;
     position: relative;
-    top: 15px;
-    right: 20px;
+    top: 0;
+    right: 40px;
+}
+
+#logo {
+    /* the logo already have padding 0 and margin 0.
+    padding is internal to the svg file*/
+    padding: 10px;
+    width: 400px;
 }
 
 
@@ -83,16 +94,16 @@ header h1 {
 
 .social-medias {
     position: fixed;
-    top: 0px;
-    right: 0px;
+    top: 6px;
+    right: 10px;
     z-index: 2;
 }
 
 .social-medias img {
     display: block;
     margin: 5px;
-    width: 32px;
-    height: 32px;
+    width: 16px;
+    height: 16px;
     opacity: 0.6;
 }
 
@@ -101,10 +112,46 @@ header h1 {
 }
 
 
+/* NavBar */
+
+nav {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 1rem;
+    width: 100vw;
+    padding: 0px 0px 0px 0px;
+    position: absolute;
+    top: 90px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+nav a:hover {
+    color: #FF7F20;
+}
+
+.active {
+    color: #FF7F20;
+}
+
+#navBar {
+    display: block;
+}
+
+#navBarPhone {
+    display: none;
+    padding-bottom: 30px;
+}
+
+
 /* SECTIONS */
 
 .section-container {
-    height: 78vh;
+    min-height: 84vh;
 }
 
 section {
@@ -116,10 +163,15 @@ section {
 
 section h3 {
     margin: 15px 0;
-    font-family: 'Open Sans Regular', Arial, Helvetica, sans-serif;
-    font-weight: 500;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-weight: bold;
     font-kerning: normal;
     opacity: 0.7;
+}
+
+section p {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-weight: normal;
 }
 
 section h3:hover {
@@ -139,24 +191,6 @@ section p {
     display: block;
 }
 
-footer {
-    font-family: 'Open Sans Bold', Arial, Helvetica, sans-serif;
-    font-weight: 800;
-    font-size: 1rem;
-    height: 7vh;
-    padding: 10px 10px;
-}
-
-footer ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-footer a:hover {
-    color: #FF7F20;
-}
-
 @media only screen and (max-width: 760px) {
     section {
         padding: 5px 10px 5px 10px;
@@ -169,13 +203,43 @@ footer a:hover {
     }
 }
 
-@media only screen and (max-width: 716px) {
-    #logo {
-        width: 40%;
+@media only screen and (max-width: 700px) {
+    header {
+        height: 20vh;
     }
+    #logo {
+        width: 200px;
+    }
+    header h1 {
+        padding: 0px 10px;
+        font-size: 0.8rem;
+        float: none;
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+    nav {
+        top: 120px;
+    }
+    .social-medias {
+        position: fixed;
+        top: 6px;
+        right: 10px;
+        z-index: 2;
+    }
+    .social-medias img {
+        display: block;
+        margin: 5px;
+        width: 22px;
+        height: 22px;
+        opacity: 0.6;
+    }
+}
+
+@media only screen and (max-width: 716px) {
     .section-container {
         /*display: inline;*/
-        height: 74vh;
+        min-height: 80vh;
     }
     section {
         padding: 0px 15px;
@@ -185,8 +249,8 @@ footer a:hover {
     }
     section h3 {
         margin: 0 0 25px 0;
-        font-family: 'Open Sans Regular', Arial, Helvetica, sans-serif;
-        font-weight: 500;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-weight: bold;
         font-kerning: normal;
         opacity: 0.7;
     }
@@ -194,36 +258,50 @@ footer a:hover {
         color: #FF7F20;
     }
     section p {
-        padding: 10px 0 10px 100px;
+        padding: 10px 0 10px 70px;
     }
-    /*section h3 {
-        margin: 5px 0;
-    }*/
 }
 
-@media only screen and (max-width: 570px) {
-    #logo {
-        width: 200px;
-    }
-    header h1 {
-        font-size: .8rem;
-        float: none;
-        position: relative;
-        top: -10px;
-        left: 13px;
-    }
+@media only screen and (max-width: 600px) {
     body {
         overflow-x: hidden;
         overflow-y: visible;
     }
-    .section-container {
-        /*display: inline;*/
-        height: 80vh;
+    #logo {
+        width: 200px;
+        position: relative;
+        top: 2px;
     }
-    footer ul {
-        display: flex;
+    header {
+        height: 16vh;
+    }
+    header h1 {
+        left: 0px;
+    }
+    nav {
+        position: relative;
+        top: 20px;
+        padding-bottom: 10px;
+    }
+    nav ul {
         flex-direction: column;
         align-items: center;
+    }
+    #navBar {
+        display: none;
+    }
+    #navBarPhone {
+        display: block;
+    }
+    .social-medias img {
+        width: 23px;
+        height: 23px;
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    .section-container {
+        padding-right: 20px;
     }
 }
 
@@ -235,20 +313,51 @@ footer a:hover {
         font-size: .7rem;
         top: 0px;
     }
-    .orange {
+    /* .orange {
         color: black;
-    }
+    } */
     .section-container {
         padding-right: 20px;
         height: auto;
     }
     section h2 {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
     section p {
+        font-size: 0.8rem;
         padding: 10px 10px 10px 50px;
     }
-    footer {
-        font-size: 1.2rem;
+}
+
+@media only screen and (max-height: 700px) {
+    header {
+        height: 18vh;
+    }
+}
+
+@media only screen and (max-height: 610px) {
+    header {
+        height: 20vh;
+    }
+}
+
+@media only screen and (max-height: 550px) {
+    header {
+        height: 22vh;
+    }
+}
+
+@media only screen and (max-height: 500px) {
+    header {
+        height: 24vh;
+    }
+}
+
+@media only screen and (max-height: 450px) {
+    header {
+        height: 26vh;
+    }
+    #navBarPhone {
+        padding-bottom: 0px;
     }
 }
