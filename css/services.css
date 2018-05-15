@@ -152,10 +152,11 @@ nav a:hover {
 
 .section-container {
     min-height: 84vh;
+    padding: 20px 200px;
 }
 
 section {
-    padding: 5px 20px 5px 20px;
+    padding: 5px 10px 5px 10px;
     display: grid;
     /* grid-template-columns: 1fr 1fr;*/
     grid-template-columns: 360px auto 20px;
@@ -191,7 +192,16 @@ section p {
     display: block;
 }
 
+@media only screen and (max-width: 1170px) {
+    .section-container {
+        padding: 10px 50px;
+    }
+}
+
 @media only screen and (max-width: 760px) {
+    .section-container {
+        padding: 10px 10px;
+    }
     section {
         padding: 5px 10px 5px 10px;
         grid-template-columns: 340px auto 20px;
@@ -240,6 +250,7 @@ section p {
     .section-container {
         /*display: inline;*/
         min-height: 80vh;
+        padding: 0px 0px;
     }
     section {
         padding: 0px 15px;
@@ -258,7 +269,7 @@ section p {
         color: #FF7F20;
     }
     section p {
-        padding: 10px 0 10px 70px;
+        padding: 10px 0 10px 50px;
     }
 }
 

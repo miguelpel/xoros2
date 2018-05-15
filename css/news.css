@@ -152,17 +152,37 @@ nav a:hover {
 
 .section-container {
     min-height: 75vh;
-    width: 100vw;
+    /* width: 100vw; */
+    max-width: 100vw;
+    padding: 50px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0 0 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 section {
-    padding: 10px 15px;
-    width: 80vw;
+    padding: 10px 10px;
+    width: 300px;
     text-align: center;
+    /* background-color: rgb(19, 202, 202); */
+}
+
+section img {
+    width: 300px;
+    height: 200px;
+    -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+section img:hover {
+    -webkit-filter: grayscale(100%) brightness(120%);
+    /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%) brightness(120%);
 }
 
 section h2,
