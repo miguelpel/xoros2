@@ -294,6 +294,20 @@ section h2:hover {
     }
 }
 
+@media only screen and (max-width: 400px) {
+    .section-container {
+        padding-top: 0px;
+    }
+    section {
+        width: 250px;
+        padding-left: 40px;
+    }
+    section img {
+        width: 200px;
+        height: 70px;
+    }
+}
+
 @media only screen and (max-width: 320px) {
     #logo {
         width: 150px;
